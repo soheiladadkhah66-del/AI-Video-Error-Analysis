@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520">
+  <!-- background -->
+  <rect width="900" height="520" fill="#0f1115"/>
+
+  <!-- title -->
+  <text x="50" y="50" fill="#ffffff" font-size="22" font-family="sans-serif">
+    Failure Flow in Current AI Video-Generation Pipelines
+  </text>
+
+  <!-- User Prompt -->
+  <rect x="50" y="100" width="220" height="70" rx="8" ry="8" fill="#1f2933" stroke="#4fd1c5" stroke-width="2"/>
+  <text x="65" y="130" fill="#e5e7eb" font-size="14" font-family="sans-serif">Human Prompt</text>
+  <text x="65" y="150" fill="#9ca3af" font-size="12" font-family="sans-serif">free-form, ambiguous text</text>
+
+  <!-- Failure note: Prompt Ambiguity -->
+  <rect x="320" y="100" width="220" height="60" rx="8" ry="8" fill="#3b0a0a" stroke="#f87171" stroke-width="2"/>
+  <text x="335" y="130" fill="#fee2e2" font-size="13" font-family="sans-serif">Failure Point #1</text>
+  <text x="335" y="148" fill="#fecaca" font-size="11" font-family="sans-serif">Prompt ambiguity &amp; unclear priorities</text>
+
+  <!-- arrow 1 -->
+  <line x1="270" y1="135" x2="320" y2="135" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Text Encoder / Latent Representation -->
+  <rect x="560" y="100" width="260" height="70" rx="8" ry="8" fill="#111827" stroke="#4b5563" stroke-width="2"/>
+  <text x="575" y="130" fill="#e5e7eb" font-size="14" font-family="sans-serif">Text Encoder → Latent Tokens</text>
+  <text x="575" y="150" fill="#9ca3af" font-size="12" font-family="sans-serif">no explicit world model, only embeddings</text>
+
+  <!-- arrow 2 -->
+  <line x1="540" y1="135" x2="560" y2="135" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Scene Understanding block -->
+  <rect x="50" y="220" width="320" height="90" rx="8" ry="8" fill="#111827" stroke="#4b5563" stroke-width="2"/>
+  <text x="65" y="245" fill="#e5e7eb" font-size="14" font-family="sans-serif">Scene / World Understanding (missing)</text>
+  <text x="65" y="265" fill="#9ca3af" font-size="12" font-family="sans-serif">
+    objects, relations, physical constraints, narrative logic
+  </text>
+
+  <!-- Failure note: No World Model -->
+  <rect x="400" y="230" width="220" height="70" rx="8" ry="8" fill="#3b0a0a" stroke="#f97316" stroke-width="2"/>
+  <text x="415" y="255" fill="#ffedd5" font-size="13" font-family="sans-serif">Failure Point #2</text>
+  <text x="415" y="273" fill="#fed7aa" font-size="11" font-family="sans-serif">No grounded scene / world model</text>
+
+  <!-- arrow from encoder to missing scene understanding -->
+  <line x1="690" y1="170" x2="360" y2="235" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- Frame Generator -->
+  <rect x="50" y="350" width="260" height="80" rx="8" ry="8" fill="#111827" stroke="#4b5563" stroke-width="2"/>
+  <text x="65" y="380" fill="#e5e7eb" font-size="14" font-family="sans-serif">Video / Frame Generator</text>
+  <text x="65" y="400" fill="#9ca3af" font-size="12" font-family="sans-serif">
+    diffusion / autoregressive model
+  </text>
+
+  <!-- Failure note: Temporal Instability -->
+  <rect x="340" y="340" width="230" height="70" rx="8" ry="8" fill="#3b0a0a" stroke="#facc15" stroke-width="2"/>
+  <text x="355" y="365" fill="#fef9c3" font-size="13" font-family="sans-serif">Failure Point #3</text>
+  <text x="355" y="383" fill="#fef3c7" font-size="11" font-family="sans-serif">
+    No persistent temporal state across frames
+  </text>
+
+  <!-- arrow from scene understanding area down to frame generator -->
+  <line x1="210" y1="310" x2="210" y2="350" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Output Video -->
+  <rect x="620" y="340" width="210" height="80" rx="8" ry="8" fill="#1f2933" stroke="#22c55e" stroke-width="2"/>
+  <text x="635" y="370" fill="#e5e7eb" font-size="14" font-family="sans-serif">Generated Video</text>
+  <text x="635" y="390" fill="#bbf7d0" font-size="12" font-family="sans-serif">
+    visually impressive but structurally unstable
+  </text>
+
+  <!-- arrow from frame generator to output video -->
+  <line x1="310" y1="390" x2="620" y2="390" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Failure note: Scenario Logic -->
+  <rect x="620" y="230" width="210" height="70" rx="8" ry="8" fill="#3b0a0a" stroke="#fb7185" stroke-width="2"/>
+  <text x="635" y="255" fill="#ffe4e6" font-size="13" font-family="sans-serif">Failure Point #4</text>
+  <text x="635" y="273" fill="#fecdd3" font-size="11" font-family="sans-serif">
+    No scenario logic / roles / goals
+  </text>
+
+  <!-- dashed arrow from prompt to scenario failure -->
+  <line x1="160" y1="170" x2="720" y2="230" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- legend -->
+  <rect x="50" y="460" width="16" height="16" fill="#3b0a0a" stroke="#f97316" stroke-width="1"/>
+  <text x="75" y="472" fill="#e5e7eb" font-size="11" font-family="sans-serif">
+    Red boxes = structural failure points in current video AIs
+  </text>
+
+  <!-- arrow marker definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#9ca3af" />
+    </marker>
+  </defs>
+</svg>
