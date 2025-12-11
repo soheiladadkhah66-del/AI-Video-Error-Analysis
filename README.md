@@ -1,104 +1,94 @@
+
 # AI-Video-Error-Analysis
 
-➡️ Quick summary available in the overview: docs/overview.md
-Technical analysis of why current AI video-generation models fail, and a high-level outline of our corrective framework.
-Why Current AI Video Models Fail
-Technical Overview & High-Level Insight
+➡️ Quick summary available in the overview: docs/overview.md  
+📊 Architecture diagram: assets/architecture.svg
 
+## Summary
 
-This document provides a focused analysis of why today’s AI video-generation systems consistently produce structural, temporal, and semantic errors.
-We describe the failure modes clearly, without revealing the proprietary solution framework.
-The full corrective method is intentionally not disclosed at this stage.
+This repository presents a structured technical analysis of the most common failure modes in current AI video-generation systems.  
+It outlines *where and why* these models break—across prompt interpretation, latent encoding, scene understanding, temporal stability, and scenario logic.
 
-1. Structural Failure Modes in Video-Generation AIs
+The purpose of this project is to make these structural weaknesses visible, reproducible, and conceptually clear without revealing any corrective or proprietary solutions.
+
+---
+
+## 1. Structural Failure Modes in Video-Generation AIs
 
 Modern video-generation systems—across all major platforms—share the same technical limitations:
 
-1.1 Lack of true scene understanding
-
-Models do not operate on a grounded world-model.
+### 1.1 Lack of true scene understanding  
+Models do not operate on a grounded world-model.  
 They only predict pixel distributions, which leads to:
 
-inconsistent faces
+- inconsistent faces  
+- unstable lighting and shadows  
+- objects drifting between frames  
+- broken physical relationships in the scene  
 
-unstable lighting and shadows
-
-objects drifting between frames
-
-broken physical relationships in the scene
-
-1.2 Missing temporal state memory
-
-Video requires continuity across time.
+### 1.2 Missing temporal state memory  
+Video requires continuity across time.  
 Most current AIs generate frames with weak or no persistent state, causing:
 
-identity drift
+- identity drift  
+- inconsistent motion  
+- temporal artifacts  
+- sudden changes in geometry  
 
-inconsistent motion
-
-temporal artifacts
-
-sudden changes in geometry
-
-1.3 Prompt ambiguity
-
+### 1.3 Prompt ambiguity  
 Human prompts do not provide the model with:
 
-stable priorities
-
-fixed scene constraints
-
-role definitions
-
-hierarchical importance of elements
+- stable priorities  
+- fixed scene constraints  
+- role definitions  
+- hierarchical importance of elements  
 
 This ambiguity becomes amplified by the model, not reduced.
 
-1.4 Absence of scenario logic
+### 1.4 Absence of scenario logic  
+Even when a prompt is well-formed, models lack:
 
-Even when a prompt is good, models lack:
+- causal reasoning  
+- emotional or narrative coherence  
+- motivations for actions  
+- fixed world rules  
 
-causal reasoning
+This results in videos that *look generated* rather than *act coherent*.
 
-emotional or narrative coherence
+---
 
-motivations for actions
-
-fixed world rules
-
-This results in videos that “look generated” rather than “act coherent.”
-
-2. What This Paper Shows (and What It Does Not)
+## 2. What This Paper Shows (and What It Does Not)
 
 This whitepaper demonstrates that:
 
-we understand the core failure points
-
-we can map the weaknesses precisely
-
-we know which architectural gaps create which errors
-
-the industry-wide limitations follow predictable patterns
+- we understand the core failure points  
+- we can map the weaknesses precisely  
+- we know which architectural gaps create which errors  
+- the industry-wide limitations follow predictable patterns  
 
 However:
 
-We do not disclose the corrective architecture here.
-
-Our internal scenario-driven framework solves the stability, continuity, and semantic issues described above,
+### **We do not disclose the corrective architecture here.**  
+Our internal scenario-driven framework solves the stability, continuity, and semantic issues described above,  
 but the technical method will be released only in controlled stages.
 
-3. Statement of Insight
+---
 
-This repository has a simple purpose:
+## 3. Statement of Insight
 
-To show that the failure modes are known, understood, and solvable—
-and that the key to the solution is already in our hands.
+This repository has a clear purpose:
 
-4. Future Updates
+> **To show that the failure modes are known, understood, and solvable —  
+> and that the key to the solution is already in our hands.**
 
-A controlled release of partial specifications and demonstrations will be published in upcoming commits.
+---
 
-➡️ Quick summary available in the overview: docs/overview.md
-Technical analysis of why current AI video-generation models fail...
+## 4. Future Updates
 
-End of Document
+A controlled release of partial specifications and demonstrations  
+will be published in upcoming commits.
+
+---
+
+### End of Document
+
