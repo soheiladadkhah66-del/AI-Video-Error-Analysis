@@ -1,7 +1,10 @@
 # AI-Video-Error-Analysis
+
+➡️ Quick summary available in the overview: docs/overview.md
 Technical analysis of why current AI video-generation models fail, and a high-level outline of our corrective framework.
 Why Current AI Video Models Fail
 Technical Overview & High-Level Insight
+
 
 This document provides a focused analysis of why today’s AI video-generation systems consistently produce structural, temporal, and semantic errors.
 We describe the failure modes clearly, without revealing the proprietary solution framework.
