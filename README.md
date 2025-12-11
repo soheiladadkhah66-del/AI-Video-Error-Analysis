@@ -98,4 +98,7 @@ and that the key to the solution is already in our hands.
 
 A controlled release of partial specifications and demonstrations will be published in upcoming commits.
 
+➡️ Quick summary available in the overview: docs/overview.md
+Technical analysis of why current AI video-generation models fail...
+
 End of Document
